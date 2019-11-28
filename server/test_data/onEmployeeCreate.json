@@ -18,7 +18,7 @@
     "employee_id": null,
     "last_sign_in_at": null,
     "updated_at": "2019-11-28T07:56:56.000Z",
-    "joining_date": "11/28/2019",
+    "joining_date": "11-28-2019",
     "introduction": null,
     "contract_end_date": null,
     "internship_end_date": null,
@@ -332,7 +332,7 @@
       "work_numbers": [
         {
           "name": "Work",
-          "number": "+919789468802"
+          "number": "09789468802"
         }
       ]
     }
