@@ -2,7 +2,8 @@
 
 const requestNPM = require('request');
 const SUCCESS_CODES = [200,201,202];
-const bearer_token = `Bearer DQVJ2RzNSRXlKQmNuRnYwaTMwT1lWM0pxZAVlPOGhzV0EwamVQNGxSRFVEOUxsMU5Od19sLUNNVVdOOXpQLWQwT0RvUDNleExnUkswaDQxY3N5WGRCMGhMTnNNNk9UbHZAZAc0J0cVBQaUE1QVl5VFZA4eWZAFYVg2MmQ1ckZAIVmFScjF2NUdjR1NtUjNYRnFQLTU4eGE0bWFHT0VBcTNCNXFHeVNfdXZAKU2hYLVBZAczEyVHdyMXE3bEJocmdnQjdLbnRyOTRjUFFVcVk0UWNlUXNUMwZDZD`
+const bearer_token = `Bearer DQVJ2RzNSRXlKQmNuRnYwaTMwT1lWM0pxZAVlPOGhzV0EwamVQNGxSRFVEOUxsMU5Od19sLUNNVVdOOXpQLWQwT0RvUDNleExnUkswaDQxY3N5WGRCMGhMTnNNNk9UbHZAZAc0J0cVBQaUE1QVl5VFZA4eWZAFYVg2MmQ1ckZAIVmFScjF2NUdjR1NtUjNYRnFQLTU4eGE0bWFHT0VBcTNCNXFHeVNfdXZAKU2hYLVBZAczEyVHdyMXE3bEJocmdnQjdLbnRyOTRjUFFVcVk0UWNlUXNUMwZDZD`;
+var userid=0
 function cleanOptions(options) {
     return JSON.stringify(options, function (key, value) {
         if (key === 'formData') {
@@ -52,25 +53,9 @@ function getOrg() {
   }
 
   function getworkplaceid(args) {
-	var email = args["user"]["email"]
-	var addr = "https://graph.facebook.com/" + email
-	var options = {
-		method:'GET',
-		url:addr,
-		headers:{
-			Authorization: bearer_token
-		}
-  }
-  request(options)
-  	.then((response) => {
-		var result = JSON.parse(response);
-		console.log("Gogul",result,result["id"]);
-        
-	})
-	.catch(err => {
-		console.log(err);
-	});
-  }
+	
+}
+  
   
 
 function requester(options){
@@ -152,51 +137,77 @@ exports = {
     }
     console.log(options["form"])
     request(options)
-    	.then((response) => {
+    	.then(function(response) {
 
     	})
-    	.catch(err => {
+    	.catch(function(err){
     		console.log(err);
     	});
   },
 
   onEmployeeUpdateHandler: function(args) {
-  	var id = getworkplaceid(args)
-	console.log("hithere");
-	console.log(id);
-    if(args["user"]["terminated"] == true || args["user"]["deleted"] == true){
-      var options = {
-        method:'DELETE',
-        url:"https://graph.facebook.com/"+id+"?active=false",
-        headers:{
-          Authorization: bearer_token
-        }
-      }
-		request(options);
+	var email = args["user"]["email"]
+	var addr = "https://graph.facebook.com/" + email
+	var options = {
+		method:'GET',
+		url:addr,
+		headers:{
+			Authorization: bearer_token
+		} }; 
+request(options)
+		.then(function(data) {
+		  var result = JSON.parse(data);
+		  console.log(result["id"]);
+		  userid = result["id"];
+		  console.log(userid)
+		  test(userid,args);
+		  
+	  })
+	  .catch(function(error){
+		  console.log("getworkplaceid");
+		  console.log(error);
+	  });
+	}
+  };
 
-    }
-    else{
-    	var options = {
-    		method:'PUT',
-    		url:"https://graph.facebook.com/" + id,
-    		headers:{
-    			Authorization: bearer_token
-    		},
-    		form:{
-  			  "name"         : args["user"]["name"],
-  			  "email"        : args["user"]["email"],
-  			  "phone"        : args["user_personal_details"][0]["phone_numbers"][0]["number"],
-  			  "department"   : args["data"]["employee"]["department"],
-  			  "title"        : args["data"]["employee"]["designation"],
-  			  "department"   : args["data"]["employee"]["department"],
-  			  "organization" : "Freshworks",
-  			  "manager"      : agrs["user_emails"][1]["email"],
-  			  "division"     : "Freshdesk",
-  			  "invited"      : true,
-  			  "work_locale"  : args["branch"]["location"],
-  			  "auth_method"  : "password"
-  			}
-      }
-    request(options);}
+function test(id,args){
+	//id= userid 
+  console.log(id);
+  console.log("hithere");
+
+  if(args["user"]["terminated"] == true || args["user"]["deleted"] == true){
+	var options = {
+	  method:'POST',
+	  url:"https://graph.facebook.com/"+id+"?active=false",
+	  headers:{
+		Authorization: bearer_token
+	  }
+	}
+	   request(options);
+
   }
-};
+  else{
+	  var options = {
+		  method:'PUT',
+		  url:"https://graph.facebook.com/" + id,
+		  headers:{
+			  Authorization: bearer_token
+		  },
+		  form:{
+			  "name"         : args["user"]["name"],
+			  "email"        : args["user"]["email"],
+			  "phone"        : args["user_personal_details"][0]["phone_numbers"][0]["number"],
+			  "department"   : args["data"]["employee"]["department"],
+			  "title"        : args["data"]["employee"]["designation"],
+			  "department"   : args["data"]["employee"]["department"],
+			  "organization" : "Freshworks",
+			  "manager"      : agrs["user_emails"][1]["email"],
+			  "division"     : "Freshdesk",
+			  "invited"      : true,
+			  "work_locale"  : args["branch"]["location"],
+			  "auth_method"  : "password"
+			}
+	}
+  request(options);
+}
+}
