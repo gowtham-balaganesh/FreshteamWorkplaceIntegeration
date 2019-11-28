@@ -2,7 +2,7 @@
 
 const requestNPM = require('request');
 const SUCCESS_CODES = [200,201,202];
-
+const bearer_token = `Bearer DQVJ2RzNSRXlKQmNuRnYwaTMwT1lWM0pxZAVlPOGhzV0EwamVQNGxSRFVEOUxsMU5Od19sLUNNVVdOOXpQLWQwT0RvUDNleExnUkswaDQxY3N5WGRCMGhMTnNNNk9UbHZAZAc0J0cVBQaUE1QVl5VFZA4eWZAFYVg2MmQ1ckZAIVmFScjF2NUdjR1NtUjNYRnFQLTU4eGE0bWFHT0VBcTNCNXFHeVNfdXZAKU2hYLVBZAczEyVHdyMXE3bEJocmdnQjdLbnRyOTRjUFFVcVk0UWNlUXNUMwZDZD`
 function cleanOptions(options) {
     return JSON.stringify(options, function (key, value) {
         if (key === 'formData') {
@@ -110,30 +110,37 @@ exports = {
   		method:'POST',
   		url:'https://graph.facebook.com/company/accounts',
   		headers:{
-  			Authorization: `Bearer DQVJ2RzNSRXlKQmNuRnYwaTMwT1lWM0pxZAVlPOGhzV0EwamVQNGxSRFVEOUxsMU5Od19sLUNNVVdOOXpQLWQwT0RvUDNleExnUkswaDQxY3N5WGRCMGhMTnNNNk9UbHZAZAc0J0cVBQaUE1QVl5VFZA4eWZAFYVg2MmQ1ckZAIVmFScjF2NUdjR1NtUjNYRnFQLTU4eGE0bWFHT0VBcTNCNXFHeVNfdXZAKU2hYLVBZAczEyVHdyMXE3bEJocmdnQjdLbnRyOTRjUFFVcVk0UWNlUXNUMwZDZD}`
+  			Authorization: bearer_token
   		},
   		form:{
 			  "name"         : args["user"]["first_name"],
 			  "email"        : args["user"]["email"],
-			  "phone_number" : "919789468802",
+			  "work_phone_number" : "09789468802",
+			  "work_phone_number_country_prefix" : 91,
 			  "department"   : department_name,
 			  "title"        : args["user"]["designation"],
 			  "division"     : team_name,	
 			  "organization" : "Freshworks",
 			  "manager"      : manager_email_id,		
-			  "start_date"   : args["user"]["joining_date"],
+			  "hire_date"   :  "1573603200",
 			  "invited"      : true,
-			  "work_address" : "Chennai",
+			  "work_address"   : "Chennai",
 			  "locale"       : "en_US",
 			  "auth_method"  : "password"
 			}
     }
     console.log(options["form"])
-    return request(options);
+    request(options)
+    	.then((response) => {
+
+    	})
+    	.catch(err => {
+    		console.log(err);
+    	});
   },
 
   onEmployeeUpdateHandler: function(args) {
-  	var email = args["data"]["employee"]["user_emails"][0]
+  	var email = args["user"]["email"]
   	var addr = "https://graph.facebook.com/" + email
   	var options = {
   		method:'GET',
@@ -152,6 +159,7 @@ exports = {
           Authorization: bearer_token
         }
       }
+      request(options);
     }
     else{
     	var options = {
@@ -175,7 +183,7 @@ exports = {
   			  "auth_method"  : "password"
   			}
       }
-    requester(options);}
+    request(options);}
   }
 
 };

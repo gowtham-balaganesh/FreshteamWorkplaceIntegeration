@@ -2,7 +2,7 @@
   "user": {
     "id": 2000074513,
     "name": "tenu dufty",
-    "email": "15tuee002@skct.edu.in",
+    "email": "15tuee004@skct.edu.in",
     "time_zone": "Asia/Calcutta",
     "language": "en",
     "account_admin": false,
@@ -33,7 +33,7 @@
     "date_format": "MonthFirst",
     "reportees_count": 0,
     "ancestry": "2000056491",
-    "terminated": false,
+    "terminated": true,
     "territorial_hr": false,
     "links": {
       "offboarding_form": null,
