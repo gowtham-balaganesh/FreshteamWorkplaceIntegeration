@@ -18,7 +18,7 @@
     "employee_id": null,
     "last_sign_in_at": null,
     "updated_at": "2019-11-28T07:56:56.000Z",
-    "joining_date": null,
+    "joining_date": "11/28/2019",
     "introduction": null,
     "contract_end_date": null,
     "internship_end_date": null,
@@ -130,7 +130,7 @@
     },
     {
       "id": 2000056489,
-      "email": "afreshteam2779@gmail.com",
+      "email": "15tuee047@skct.edu.in",
       "confirmed": true,
       "primary_email": true,
       "user_id": 2000056491
@@ -179,7 +179,7 @@
       "deleted": false,
       "language": "en",
       "holiday_list": [],
-      "location": "Chennai, India",
+      "location": "Chennai",
       "date_format": "MonthFirst"
     }
   ],
@@ -332,7 +332,7 @@
       "work_numbers": [
         {
           "name": "Work",
-          "number": ""
+          "number": "+919789468802"
         }
       ]
     }

@@ -1,441 +1,586 @@
 {
-  "timestamp": 1496400354326,
-  "account_id": 15,
-  "domain": "sample.freshteam.com",
-  "event": "onEmployeeUpdate",
-  "region": "US",
-  "data": {
-    "employee": {
-      "id": 122,
-      "account_id": 1,
-      "first_name": "aru",
-      "last_name": "kuma",
-      "middle_name": "Jr.",
-      "user_emails": [
-        "ronaldo@skct.edu.in"
-      ],
-      "employee_id": "1",
-      "status": {
-        "id": 1,
-        "value": "Active"
-      },
-      "designation": "Developer",
-      "deleted": false,
-      "user_category": {
-        "id": 1,
-        "value": "Regular"
-      },
-      "user_type": {
-        "id": 1,
-        "value": "Contract"
-      },
-      "custom_fields": [],
-      "updated_at": "2019-10-11 06:18:10 -0700",
-      "created_at": "2019-10-11 06:17:41 -0700",
-      "time_zone": "US/Pacific",
-      "language": "en",
-      "demo": null,
-      "confirmed": false,
-      "joining_date": "2019-10-11",
-      "shift_timings": "{:start_time=>\"09:00\", :end_time=>\"15:00\"}",
-      "account_admin": false,
-      "contract_end_date": "2019-03-21 11:30:00 -0700",
-      "introduction": "[\"Eius aperiam omnis tenetur aut.\", \"Rerum sed doloremque neque et nulla aut porro consequuntur.\", \"Quam qui sed laborum porro quisquam nemo.\"]",
-      "imported_id": null,
-      "leave_policy_id": 1,
-      "reportees_count": 0,
-      "draft": false,
-      "level_id": 1,
-      "terminated": false,
-      "sub_department_id": null,
-      "twitter_id": null,
-      "facebook_id": null,
-      "seating_location": "559",
-      "internship_end_date": "2019-03-23 11:30:00 -0700",
-      "work_contact": {},
-      "current_sign_in_at": null,
-      "last_sign_in_at": null,
-      "current_sign_in_ip": null,
-      "last_sign_in_ip": null,
-      "misc": {
-        "date_format": "MonthFirst"
-      },
-      "failed_attempts": 0,
-      "last_failed_login_ip": null,
-      "ceo": false,
-      "ancestry": "1",
-      "signature": "<p>Thanks,<br>Freshteam Support</p>",
-      "sign_in_count": 0,
-      "root_user": false,
-      "stripped_employee_id": null
+  "user": {
+    "id": 2000061994,
+    "name": "Limited Recuiter user 2",
+    "email": "mjaafreshteam2779@gmail.com",
+    "time_zone": "Asia/Calcutta",
+    "language": "en",
+    "account_admin": false,
+    "first_name": "Limited",
+    "middle_name": null,
+    "last_name": "Recuiter user 2",
+    "confirmed": true,
+    "deleted": false,
+    "designation": "backend",
+    "status": 1,
+    "user_type": 2,
+    "user_category": 1,
+    "employee_id": "123",
+    "last_sign_in_at": "2019-10-29T12:59:36.000Z",
+    "updated_at": "2019-11-28T09:46:19.000Z",
+    "joining_date": "2019-11-22",
+    "introduction": null,
+    "contract_end_date": null,
+    "internship_end_date": null,
+    "current_sign_in_at": "2019-10-29T12:59:38.000Z",
+    "signature": null,
+    "ceo": false,
+    "root_user": true,
+    "draft": false,
+    "mask": null,
+    "opt_out": false,
+    "skip_invite_email_preview": null,
+    "date_format": "MonthFirst",
+    "reportees_count": 0,
+    "ancestry": null,
+    "terminated": false,
+    "territorial_hr": false,
+    "links": {
+      "offboarding_form": null,
+      "onboarding_form": null
     },
-    "associations": {
-      "team": {
-        "id": 1,
-        "account_id": 1,
-        "name": "Business",
-        "email": null,
-        "leader_id": null,
-        "deleted": false,
-        "created_at": "2019-10-11 06:17:26 -0700",
-        "updated_at": "2019-10-11 06:17:26 -0700"
-      },
-      "branch": {
-        "id": 1,
-        "account_id": 1,
-        "name": "Default - Head office",
-        "street": null,
-        "city": "San Francisco",
-        "state": null,
-        "country_code": "US",
-        "zip": null,
-        "time_zone": "US/Pacific",
-        "contact_info": {},
-        "currency": "USD",
-        "main_office": true,
-        "deleted": false,
-        "language": null,
-        "holiday_list": [],
-        "location": "San Francisco, United States of America",
-        "date_format": "MonthFirst",
-        "created_at": "2019-10-11 06:17:26 -0700",
-        "updated_at": "2019-10-11 06:17:26 -0700"
-      },
-      "job_role": {
-        "id": 1,
-        "account_id": 1,
-        "name": "Marketing",
-        "deleted": false,
-        "created_at": "2019-10-11 06:17:27 -0700",
-        "updated_at": "2019-10-11 06:17:27 -0700"
-      },
-      "reporting_to": {
-        "id": 1,
-        "account_id": 1,
-        "first_name": "John",
-        "last_name": "Smith",
-        "middle_name": null,
-        "user_emails": [
-          "john@freshteam.com"
-        ],
-        "employee_id": "E001",
-        "status": {
-          "id": 1,
-          "value": "Active"
-        },
-        "designation": null,
-        "deleted": false,
-        "user_category": {
-          "id": 1,
-          "value": "Regular"
-        },
-        "user_type": {
-          "id": 2,
-          "value": "Full Time"
-        },
-        "custom_fields": [],
-        "updated_at": "2019-10-11 06:17:59 -0700",
-        "created_at": "2019-10-11 06:17:27 -0700",
-        "time_zone": "US/Pacific",
-        "language": "en",
-        "demo": null,
-        "confirmed": true,
-        "joining_date": "2019-10-11",
-        "shift_timings": null,
-        "account_admin": true,
-        "contract_end_date": null,
-        "introduction": null,
-        "imported_id": null,
-        "leave_policy_id": null,
-        "reportees_count": 3,
-        "draft": false,
-        "level_id": null,
-        "terminated": false,
-        "sub_department_id": null,
-        "twitter_id": null,
-        "facebook_id": null,
-        "seating_location": null,
-        "internship_end_date": null,
-        "work_contact": {},
-        "ancestry": null,
-        "signature": null
-      },
-      "hr_incharge": {
-        "id": 1,
-        "account_id": 1,
-        "first_name": "John",
-        "last_name": "Smith",
-        "middle_name": null,
-        "user_emails": [
-          "john@freshteam.com"
-        ],
-        "employee_id": "E001",
-        "status": {
-          "id": 1,
-          "value": "Active"
-        },
-        "designation": null,
-        "deleted": false,
-        "user_category": {
-          "id": 1,
-          "value": "Regular"
-        },
-        "user_type": {
-          "id": 2,
-          "value": "Full Time"
-        },
-        "custom_fields": [],
-        "updated_at": "2019-10-11 06:17:59 -0700",
-        "created_at": "2019-10-11 06:17:27 -0700",
-        "time_zone": "US/Pacific",
-        "language": "en",
-        "demo": null,
-        "confirmed": true,
-        "joining_date": "2019-10-11",
-        "shift_timings": null,
-        "account_admin": true,
-        "contract_end_date": null,
-        "introduction": null,
-        "imported_id": null,
-        "leave_policy_id": null,
-        "reportees_count": 3,
-        "draft": false,
-        "level_id": null,
-        "terminated": false,
-        "sub_department_id": null,
-        "twitter_id": null,
-        "facebook_id": null,
-        "seating_location": null,
-        "internship_end_date": null,
-        "work_contact": {},
-        "current_sign_in_at": "2019-10-11 06:17:59 -0700",
-        "last_sign_in_at": "2019-10-11 06:17:59 -0700",
-        "current_sign_in_ip": "127.0.0.1",
-        "last_sign_in_ip": "127.0.0.1",
-        "misc": {
-          "date_format": "MonthFirst"
-        },
-        "failed_attempts": 0,
-        "last_failed_login_ip": null,
-        "ceo": false,
-        "ancestry": null,
-        "signature": null,
-        "sign_in_count": 1,
-        "root_user": false,
-        "stripped_employee_id": null
-      },
-      "level": {
-        "id": 1,
-        "name": "IC1",
-        "account_id": 1,
-        "created_at": "2019-10-11 06:17:27 -0700",
-        "updated_at": "2019-10-11 06:17:27 -0700",
-        "deleted": false
-      },
-      "leave_policy": {
-        "id": 1,
-        "account_id": 1,
-        "name": "Demo Policy",
-        "description": null,
-        "policy_start_date": "2019-01-01",
-        "status": {
-          "id": 1,
-          "value": "Active"
-        },
-        "default": true,
-        "deleted": false,
-        "demo": true,
-        "created_at": "2019-10-11 06:17:37 -0700",
-        "updated_at": "2019-10-11 06:17:37 -0700",
-        "transfer_leaves": false
-      },
-      "personal_detail": {
-        "id": 9,
-        "account_id": 1,
-        "user_id": 9,
-        "nick_name": null,
-        "date_of_birth": null,
-        "marital_status": null,
-        "gender": null,
-        "blood_group": null,
-        "email": null,
-        "street": null,
-        "emergency_contacts": [],
-        "social_profiles": [],
-        "country_code": null,
-        "zip_code": null,
-        "state": null,
-        "city": null,
-        "phone_numbers": [
-          {
-            "name": "Work",
-            "number": ""
-          }
-        ],
-        "communication_street": null,
-        "communication_city": null,
-        "communication_state": null,
-        "communication_country_code": null,
-        "communication_zip_code": null,
-        "address": {},
-        "communication_address": {},
-        "created_at": "2019-10-11 06:17:41 -0700",
-        "updated_at": "2019-10-11 06:17:41 -0700"
-      },
-      "additional_detail": {
-        "id": 9,
-        "account_id": 1,
-        "user_id": 9,
-        "eeo_gender": null,
-        "eeo_veteran": null,
-        "eeo_ethnicity": null,
-        "eeo_disabled": null,
-        "eeo_job_category": null,
-        "eeo_company_code": null,
-        "id_card_details": null,
-        "hire_reason": null,
-        "workstation_number": null,
-        "secondary_business_email": null,
-        "created_at": "2019-10-11 06:17:41 -0700",
-        "updated_at": "2019-10-11 06:17:41 -0700",
-        "work_numbers": [
-          {
-            "name": "Work",
-            "number": ""
-          }
-        ]
-      },
-      "additional_personal_detail": {
-        "id": 9,
-        "account_id": 1,
-        "user_id": 9,
-        "secondary_last_name": null,
-        "heriditary_last_name": null,
-        "legal_name": null,
-        "previous_name": null,
-        "previous_name_change_date": null,
-        "im_address": null,
-        "place_of_birth": null,
-        "country_of_birth": null,
-        "flsa_required": false,
-        "user_title_id": null,
-        "user_suffix_name_id": null,
-        "user_honorary_suffix_id": null,
-        "user_professional_suffix_id": null,
-        "user_academic_suffix_id": null,
-        "citizenship_status_id": null,
-        "deleted": false,
-        "created_at": "2019-10-11 06:17:41 -0700",
-        "updated_at": "2019-10-11 06:17:41 -0700"
-      },
-      "termination_details": [
-        {
-          "id": 9,
-          "account_id": 1,
-          "user_id": 9,
-          "employment_end_date": null,
-          "retirement_eligibility_date": null,
-          "expected_retirement_date": null,
-          "actual_retirement_date": null,
-          "termination_date": null,
-          "termination_reason": null,
-          "notice_period": null,
-          "notice_start_date": null,
-          "notice_end_date": null,
-          "retirement_status_id": null,
-          "termination_category_id": null,
-          "current": true,
-          "created_at": "2019-10-11 06:17:41 -0700",
-          "updated_at": "2019-10-11 06:17:41 -0700"
-        }
+    "offboarding_user_id": null,
+    "onboarding_user_id": null,
+    "transfer_leaves": false,
+    "user_lead_id": null,
+    "custom_field_attributes": {
+      "year_of_passed_out_cf_str01": null,
+      "dropdown_cf_str03": null,
+      "new_dropdown_cf_str04": null,
+      "new_dropdown_2_cf_str05": null,
+      "fresher_cf_boolean01": null,
+      "new_checkbox_cf_boolean02": null,
+      "new_cf_boolean03": null,
+      "new_cf_boolean04": null,
+      "new_cf_boolean05": null,
+      "experience_cf_str02": null,
+      "radio_cf_str06": null,
+      "radio_cf_str07": null,
+      "radio_cf_str08": null
+    },
+    "hr_incharge_id": null,
+    "user_document_ids": [],
+    "role_ids": [
+      2000056842,
+      2000056844
+    ],
+    "user_email_ids": [
+      2000061992
+    ],
+    "team_id": 2000039938,
+    "branch_id": 2000014519,
+    "job_role_id": 2000124940,
+    "leave_policy_id": 2000004422,
+    "personal_detail_id": 2000061991,
+    "additional_detail_id": 56953,
+    "additional_personal_detail_id": 56953,
+    "job_detail_id": 56957,
+    "rehire_detail_id": 56953,
+    "termination_detail_id": 56953,
+    "termination_request_ids": [
+      2000000130
+    ],
+    "transfer_request_ids": [],
+    "skill_use_ids": [],
+    "reportee_ids": [],
+    "incharge_user_ids": [],
+    "bonus_ids": [],
+    "stock_ids": [],
+    "dependent_ids": [],
+    "team_ids": [],
+    "user_team_ids": [],
+    "user_language_ids": [],
+    "user_territory_ids": [],
+    "user_l2_manager_ids": [],
+    "user_l2_hr_manager_ids": [],
+    "language_ids": [],
+    "l2_manager_ids": [],
+    "l2_hr_manager_ids": [],
+    "qualification_ids": [],
+    "position_ids": [],
+    "bank_account_ids": [],
+    "compensation_detail_ids": []
+  },
+  "roles": [
+    {
+      "id": 2000056842,
+      "name": "Limited Recruiter",
+      "description": "Has recruiter level privileges on candidates within the jobs they are assigned to. Does not have access to other candidates outside their assigned jobs.",
+      "default": true,
+      "privilege_list": [
+        "view_user",
+        "move_applicants",
+        "mark_as_private_conversation",
+        "manage_offer_settings",
+        "view_jobs",
+        "add_reject_reason",
+        "manage_canned_responses",
+        "create_leaves",
+        "manage_assigned_jobs",
+        "common_filters",
+        "view_active_employees",
+        "scoped_view_offer",
+        "scoped_manage_offer",
+        "scoped_update_followers",
+        "scoped_update_applicants",
+        "scoped_schedule_interview",
+        "scoped_move_applicants",
+        "scoped_reply_applicants",
+        "scoped_override_cooloff",
+        "email_sync",
+        "scoped_update_lead_owner",
+        "scoped_candidate_requisition_assignment",
+        "view_assigned_requisitions",
+        "scoped_update_vendor_to_job",
+        "view_vendor",
+        "view_qr_code"
       ],
-      "visas": [],
-      "background_verification_details": [],
-      "government_documents": [],
-      "bonuses": [],
-      "stocks": [],
-      "licenses": [],
-      "certificates": [],
-      "awards": [],
-      "honors": [],
-      "teams": [],
-      "qualifications": [],
-      "termination_requests": [],
-      "positions": [
-        {
-          "id": 1,
-          "account_id": 1,
-          "user_id": 9,
-          "company": "Hills-Grimes",
-          "start_date": "2009-09-22 11:30:00 -0700",
-          "end_date": "2015-07-25 11:30:00 -0700",
-          "role": "Lead Security Administrator",
-          "job_type": 0,
-          "location": null,
-          "country_code": "KR",
-          "state_code": "PA",
-          "city": "Gutmannhaven",
-          "description": null,
-          "other_salary_components": null,
-          "salary_value": null,
-          "references": null,
-          "deleted": false,
-          "currency": null,
-          "created_at": "2019-10-11 06:18:10 -0700",
-          "updated_at": "2019-10-11 06:18:10 -0700"
-        }
-      ],
-      "cost_center": {
-        "id": 51,
-        "account_id": 1,
-        "value": "Costcenter 1",
-        "position": 1,
-        "deleted": false,
-        "created_at": "2019-10-11 06:17:29 -0700",
-        "updated_at": "2019-10-11 06:17:29 -0700",
-        "type": 8
+      "deleted": false,
+      "system": false,
+      "category": 40,
+      "scoped_privileges": {
+        "manage_offer": "scoped_manage_offer",
+        "override_cooloff": "scoped_override_cooloff",
+        "update_followers": "scoped_update_followers",
+        "update_lead_owner": "scoped_update_lead_owner",
+        "view_offer": "scoped_view_offer",
+        "update_vendor_to_job": "scoped_update_vendor_to_job",
+        "candidate_requisition_assignment": "scoped_candidate_requisition_assignment"
       }
     },
-    "actor": {
-      "id": 9,
-      "name": "Tyron Dr. Dena",
-      "email": "124498fannie.jones@example.org"
-    },
-    "changes": {
-      "model_changes": {
-        "user_type": [
-          2,
-          1
-        ],
-        "branch_id": [
-          2,
-          1
-        ],
-        "first_name": [
-          "Wanetta",
-          "Tyron"
-        ],
-        "middle_name": [
-          "Ms.",
-          "Dr."
-        ],
-        "last_name": [
-          "Stamm",
-          "Dena"
-        ],
-        "joining_date": [
-          "2019-06-17",
-          "2019-10-11"
-        ],
-        "designation": [
-          "Forward Marketing Coordinator",
-          "Developer"
-        ],
-        "updated_at": [
-          "2019-10-11T06:17:41.000-07:00",
-          "2019-10-11T13:18:10.000Z"
-        ]
+    {
+      "id": 2000056844,
+      "name": "Employee",
+      "description": "Can View limited set of information of other Employees, Request timeoff, View company job postings and Refer a candidate to an Organisation.",
+      "default": true,
+      "privilege_list": [
+        "view_user",
+        "view_jobs",
+        "create_leaves",
+        "common_filters",
+        "view_active_employees",
+        "view_qr_code"
+      ],
+      "deleted": false,
+      "system": false,
+      "category": 30,
+      "scoped_privileges": {}
+    }
+  ],
+  "user_emails": [
+    {
+      "id": 2000061992,
+      "email": "mjaafreshteam2779@gmail.com",
+      "confirmed": true,
+      "primary_email": true,
+      "user_id": 2000061994
+    }
+  ],
+  "teams": [
+    {
+      "id": 2000039938,
+      "name": "Business",
+      "deleted": false,
+      "links": {
+        "users": "/users?non_paginated=true&query_hash%5B%5D%5Bcondition%5D=team_id&query_hash%5B%5D%5Boperator%5D=is_in&query_hash%5B%5D%5Bvalue%5D=2000039938&query_hash%5B%5D%5Bcondition%5D=deleted&query_hash%5B%5D%5Boperator%5D=is&query_hash%5B%5D%5Bvalue%5D=false&query_hash%5B%5D%5Bcondition%5D=status&query_hash%5B%5D%5Boperator%5D=is&query_hash%5B%5D%5Bvalue%5D=1"
       }
     }
-  }
+  ],
+  "branches": [
+    {
+      "id": 2000014519,
+      "account_id": 22037,
+      "name": "Default - Head office",
+      "street": null,
+      "city": "Chennai",
+      "state": null,
+      "country_code": "IN",
+      "zip": null,
+      "time_zone": "Asia/Calcutta",
+      "contact_info": {},
+      "currency": "USD",
+      "main_office": false,
+      "deleted": false,
+      "language": "en",
+      "holiday_list": [],
+      "location": "Chennai, India",
+      "date_format": "MonthFirst"
+    }
+  ],
+  "job_roles": [
+    {
+      "id": 2000124940,
+      "name": "Development",
+      "deleted": false
+    }
+  ],
+  "leave_policies": [
+    {
+      "id": 2000004422,
+      "name": "policy ",
+      "description": null,
+      "policy_start_date": "2019-10-20",
+      "status": 1,
+      "default": true,
+      "deleted": false,
+      "deleted_policy_mapping_ids": [],
+      "carry_over_start_date": "2019-01-01",
+      "holiday_calendar_id": 2000003149,
+      "work_calendar_id": 2000003259
+    }
+  ],
+  "holiday_calendars": [
+    {
+      "id": 2000003149,
+      "name": "United States of America Holidays",
+      "public_holiday_count": 15,
+      "min_optional_holiday_count": 5,
+      "default": true,
+      "deleted": false,
+      "holiday_list_ids": [
+        2000060799,
+        2000060800,
+        2000060801,
+        2000060802,
+        2000060803,
+        2000060804,
+        2000060805,
+        2000060806,
+        2000060807,
+        2000060808,
+        2000060809,
+        2000060810,
+        2000060811,
+        2000060812,
+        2000060813,
+        2000060814,
+        2000060815,
+        2000060816,
+        2000060817,
+        2000060818
+      ]
+    }
+  ],
+  "holiday_lists": [
+    {
+      "id": 2000060799,
+      "name": "New Year's Day",
+      "leave_date": "2019-01-01",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060800,
+      "name": "Martin Luther King, Jr. Day",
+      "leave_date": "2019-01-21",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060801,
+      "name": "Groundhog Day",
+      "leave_date": "2019-02-02",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060802,
+      "name": "Valentine's Day",
+      "leave_date": "2019-02-14",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060803,
+      "name": "Presidents' Day",
+      "leave_date": "2019-02-18",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060804,
+      "name": "St. Patrick's Day",
+      "leave_date": "2019-03-17",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060805,
+      "name": "April Fool's Day",
+      "leave_date": "2019-04-01",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060806,
+      "name": "Good Friday",
+      "leave_date": "2019-04-19",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060807,
+      "name": "Easter Sunday",
+      "leave_date": "2019-04-21",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060808,
+      "name": "Earth Day",
+      "leave_date": "2019-04-22",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060809,
+      "name": "Mother's Day",
+      "leave_date": "2019-05-12",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060810,
+      "name": "Armed Forces Day",
+      "leave_date": "2019-05-18",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060811,
+      "name": "Memorial Day",
+      "leave_date": "2019-05-27",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060812,
+      "name": "Father's Day",
+      "leave_date": "2019-06-16",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060813,
+      "name": "Independence Day",
+      "leave_date": "2019-07-04",
+      "optional_holiday": false,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060814,
+      "name": "Labor Day",
+      "leave_date": "2019-09-02",
+      "optional_holiday": true,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060815,
+      "name": "Halloween",
+      "leave_date": "2019-10-31",
+      "optional_holiday": true,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060816,
+      "name": "Veterans Day",
+      "leave_date": "2019-11-11",
+      "optional_holiday": true,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060817,
+      "name": "Thanksgiving",
+      "leave_date": "2019-11-28",
+      "optional_holiday": true,
+      "holiday_calendar_id": 2000003149
+    },
+    {
+      "id": 2000060818,
+      "name": "Christmas Day",
+      "leave_date": "2019-12-25",
+      "optional_holiday": true,
+      "holiday_calendar_id": 2000003149
+    }
+  ],
+  "work_calendars": [
+    {
+      "id": 2000003259,
+      "sunday": 0,
+      "monday": 2,
+      "tuesday": 2,
+      "wednesday": 2,
+      "thursday": 2,
+      "friday": 2,
+      "saturday": 1,
+      "work_start_time": null,
+      "work_end_time": null,
+      "deleted": false,
+      "name": "new work week",
+      "default": false,
+      "leave_policy_ids": [
+        2000003317,
+        2000003956,
+        2000004069,
+        2000004322,
+        2000004422,
+        2000004826
+      ]
+    }
+  ],
+  "user_personal_details": [
+    {
+      "id": 2000061991,
+      "account_id": 22037,
+      "nick_name": null,
+      "date_of_birth": null,
+      "marital_status": null,
+      "gender": null,
+      "blood_group": null,
+      "email": "invlaidemail123@gmail.com",
+      "street": null,
+      "emergency_contacts": [],
+      "social_profiles": [],
+      "country_code": null,
+      "zip_code": null,
+      "state": null,
+      "city": null,
+      "user_id": 2000061994,
+      "same_as_residential": false,
+      "phone_numbers": [
+        {
+          "name": "Mobile",
+          "number": ""
+        }
+      ],
+      "communication_street": null,
+      "communication_city": null,
+      "communication_state": null,
+      "communication_country_code": null,
+      "communication_zip_code": null
+    }
+  ],
+  "user_additional_details": [
+    {
+      "id": 56953,
+      "account_id": 22037,
+      "user_id": 2000061994,
+      "workstation_number": null,
+      "eeo_ethnicity": null,
+      "eeo_job_category": null,
+      "id_card_details": null,
+      "work_numbers": [
+        {
+          "name": "Work",
+          "number": ""
+        }
+      ]
+    }
+  ],
+  "user_additional_personal_details": [
+    {
+      "id": 56953,
+      "account_id": 22037,
+      "user_id": 2000061994
+    }
+  ],
+  "user_job_details": [
+    {
+      "id": 56957,
+      "account_id": 22037,
+      "user_id": 2000061994,
+      "current": true,
+      "probation_start_date": null,
+      "probation_end_date": null
+    }
+  ],
+  "user_rehire_details": [
+    {
+      "id": 56953,
+      "account_id": 22037,
+      "user_id": 2000061994
+    }
+  ],
+  "user_termination_details": [
+    {
+      "id": 56953,
+      "account_id": 22037,
+      "user_id": 2000061994,
+      "termination_date": null,
+      "termination_reason": null,
+      "notice_period": null,
+      "notice_start_date": null,
+      "notice_end_date": null
+    }
+  ],
+  "user_termination_requests": [
+    {
+      "id": 2000000130,
+      "account_id": 22037,
+      "user_id": 2000061994,
+      "approved_exit_date": "2019-10-29",
+      "proposed_exit_date": null,
+      "termination_reason": null,
+      "termination_status": 4,
+      "requested_by_id": 2000056578,
+      "approved_termination_reason": "gtyftyftyfyt",
+      "approved_at": "2019-10-29T13:04:04.000Z",
+      "current": false,
+      "created_at": "2019-10-29T13:04:04.000Z",
+      "reject_reason": "yfgtfyftyfdy",
+      "manager_proposed_exit_date": null,
+      "manager_approved_at": null,
+      "request_raised_on": "2019-10-29",
+      "note_to_hr": null,
+      "note_to_manager": null,
+      "approved_by_id": 2000056578,
+      "approved_termination_category_id": 407030
+    }
+  ],
+  "users": [
+    {
+      "id": 2000056578,
+      "name": "i am hr partner",
+      "time_zone": "Asia/Calcutta",
+      "language": "en",
+      "account_admin": false,
+      "first_name": "i am",
+      "middle_name": "",
+      "last_name": "hr partner",
+      "confirmed": true,
+      "deleted": false,
+      "designation": "kjhgfdsa",
+      "status": 1,
+      "user_type": 2,
+      "user_category": 1,
+      "employee_id": "",
+      "last_sign_in_at": "2019-11-19T14:35:40.000Z",
+      "updated_at": "2019-11-19T14:35:40.000Z",
+      "joining_date": null,
+      "introduction": "",
+      "contract_end_date": null,
+      "internship_end_date": null,
+      "current_sign_in_at": "2019-11-19T14:35:40.000Z",
+      "signature": "",
+      "ceo": false,
+      "root_user": true,
+      "draft": false,
+      "mask": null,
+      "opt_out": false,
+      "skip_invite_email_preview": null,
+      "date_format": "MonthFirst",
+      "reportees_count": 1,
+      "ancestry": null,
+      "terminated": false,
+      "transfer_leaves": false
+    }
+  ],
+  "termination_categories": [
+    {
+      "id": 407030,
+      "value": "Resignation",
+      "position": 1,
+      "deleted": false
+    }
+  ]
 }

@@ -46,6 +46,31 @@ function requester(options){
   }) 
 }
 
+// function form_data(args){
+// 	var department_id = args["user"]["job_role_id"] 
+//   	for( let i = 0; i < args["user"]["job_roles"].length; i++){
+//   		if( args["user"]["job_roles"] == department_id ){
+//   			var department_name = args["user"]["job_roles"]["name"]
+//   		}
+//   	}
+//   	var reporting_manager_id = args["user"]["reporting_to_id"]
+//   	var manager_email_id = args["user_emails"][1]["email"]
+// 		const form={
+// 			  "name"         : args["user"]["first_name"],
+// 			  "email"        : args["user"]["email"],
+// 			  "phone"				 : args["user_additional_details"]["work_numbers"][0]["number"],
+// 			  "department"   : department_name,
+// 			  "title"        : args["user"]["designation"],
+// 			  "division"     : args["user"]["team_id"],	
+// 			  "organization" : "Freshworks",
+// 			  "manager"      : manager_email_id,
+// 			  "start_date"   : args["user"]["joining_date"],
+// 			  "invited"      : true,
+// 			  "work_locale"  : args["branches"]["location"],
+// 			  "auth_method"  : "password"
+// 			}
+// }
+
 exports = {
 
   events: [
@@ -54,37 +79,48 @@ exports = {
   ],
 
   onEmployeeCreateHandler: function(args) {
-  	var external_id = "23";
-  	const options = {
+  	var department_id = args["user"]["job_role_id"] 
+  	for( var i = 0; i < args["job_roles"].length; i++){
+  		if( args["job_roles"][i]["id"] == department_id ){
+  			var department_name = args["job_roles"][i]["name"]
+  		}
+  	}
+  	var manager_email_id = args["user_emails"][1]["email"]
+  	var team_id = args["user"]["team_id"] 
+  	for( let i = 0; i < args["teams"].length; i++){
+  		if( args["teams"][i]["id"] == team_id ){
+  			var team_name = args["teams"][i]["name"]
+  		}
+  	}
+  	var options = {
   		method:'POST',
   		url:'https://graph.facebook.com/company/accounts',
   		headers:{
   			Authorization: `Bearer DQVJ2RzNSRXlKQmNuRnYwaTMwT1lWM0pxZAVlPOGhzV0EwamVQNGxSRFVEOUxsMU5Od19sLUNNVVdOOXpQLWQwT0RvUDNleExnUkswaDQxY3N5WGRCMGhMTnNNNk9UbHZAZAc0J0cVBQaUE1QVl5VFZA4eWZAFYVg2MmQ1ckZAIVmFScjF2NUdjR1NtUjNYRnFQLTU4eGE0bWFHT0VBcTNCNXFHeVNfdXZAKU2hYLVBZAczEyVHdyMXE3bEJocmdnQjdLbnRyOTRjUFFVcVk0UWNlUXNUMwZDZD}`
   		},
   		form:{
-			  "name"         : args["data"]["employee"]["first_name"],
-			  "email"        : args["data"]["employee"]["user_emails"][0],
-			  "title"        : args["data"]["employee"]["designation"],
-			  "department"   : args["data"]["employee"]["department"],
+			  "name"         : args["user"]["first_name"],
+			  "email"        : args["user"]["email"],
+			  "phone"				 : [ args["user_additional_details"][0]["work_numbers"][0]["number"] ],
+			  "department"   : department_name,
+			  "title"        : args["user"]["designation"],
+			  "division"     : team_name,	
 			  "organization" : "Freshworks",
-			  "manager"      : "15tuee047@skct.edu.in",//args["data"]["associations"]["reporting_to"]["user_emails"][0],
-			  "division"     : "Freshdesk",	
-			  "cost_center"  : "test",
-			  "external_id"  : external_id,
+			  "manager"      : manager_email_id,		
+			  "start_date"   : args["user"]["joining_date"],
 			  "invited"      : true,
-			  "work_locale"  : args["data"]["associations"]["branch"]["location"],
+			  "work_locale"  : "en_IN",
 			  "auth_method"  : "password"
 			}
     }
-    requester(options);
-    external_id = Number(external_id)+1;
-    external_id.toString();
+    console.log(options["form"])
+    //requester(options);
   },
 
   onEmployeeUpdateHandler: function(args) {
-  	const email = args["data"]["employee"]["user_emails"][0]
-  	const addr = "https://graph.facebook.com/" + email
-  	const options = {
+  	var email = args["data"]["employee"]["user_emails"][0]
+  	var addr = "https://graph.facebook.com/" + email
+  	var options = {
   		method:'GET',
   		url:addr,
   		headers:{
@@ -92,33 +128,25 @@ exports = {
   		}
     }
     resp = requester(options)
-    console.log(resp);
     var id = resp["id"]
-
-  }
-
-
-
-
-
-  	const options = {
+  	var options = {
   		method:'PUT',
   		url:"https://graph.facebook.com/" + id,
   		headers:{
   			Authorization: `Bearer DQVJ2RzNSRXlKQmNuRnYwaTMwT1lWM0pxZAVlPOGhzV0EwamVQNGxSRFVEOUxsMU5Od19sLUNNVVdOOXpQLWQwT0RvUDNleExnUkswaDQxY3N5WGRCMGhMTnNNNk9UbHZAZAc0J0cVBQaUE1QVl5VFZA4eWZAFYVg2MmQ1ckZAIVmFScjF2NUdjR1NtUjNYRnFQLTU4eGE0bWFHT0VBcTNCNXFHeVNfdXZAKU2hYLVBZAczEyVHdyMXE3bEJocmdnQjdLbnRyOTRjUFFVcVk0UWNlUXNUMwZDZD}`
   		},
   		form:{
-			  "name"         : args["data"]["employee"]["first_name"],
-			  "email"        : args["data"]["employee"]["user_emails"][0],
+			  "name"         : args["user"]["name"],
+			  "email"        : args["user"]["email"],
+			  "phone"        : args["user_personal_details"][0]["phone_numbers"][0]["number"],
+			  "department"   : args["data"]["employee"]["department"],
 			  "title"        : args["data"]["employee"]["designation"],
 			  "department"   : args["data"]["employee"]["department"],
 			  "organization" : "Freshworks",
-			  "manager"      : "15tuee047@skct.edu.in",
-			  "division"     : "Freshdesk",	
-			  "cost_center"  : "test",
-			  "external_id"  : "2309",
+			  "manager"      : agrs["user_emails"][1]["email"],
+			  "division"     : "Freshdesk",
 			  "invited"      : true,
-			  "work_locale"  : args["data"]["associations"]["branch"]["location"],
+			  "work_locale"  : args["branch"]["location"],
 			  "auth_method"  : "password"
 			}
     }
