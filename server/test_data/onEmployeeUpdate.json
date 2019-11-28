@@ -1,8 +1,8 @@
 {
   "user": {
-    "id": 2000061994,
-    "name": "Limited Recuiter user 2",
-    "email": "mjaafreshteam2779@gmail.com",
+    "id": 2000074513,
+    "name": "tenu dufty",
+    "email": "15tuee0504@skct.edu.in",
     "time_zone": "Asia/Calcutta",
     "language": "en",
     "account_admin": false,
@@ -33,7 +33,7 @@
     "date_format": "MonthFirst",
     "reportees_count": 0,
     "ancestry": null,
-    "terminated": false,
+    "terminated": true,
     "territorial_hr": false,
     "links": {
       "offboarding_form": null,
@@ -571,7 +571,7 @@
       "date_format": "MonthFirst",
       "reportees_count": 1,
       "ancestry": null,
-      "terminated": false,
+      "terminated": true,
       "transfer_leaves": false
     }
   ],

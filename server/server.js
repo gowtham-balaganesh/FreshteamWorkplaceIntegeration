@@ -51,6 +51,28 @@ function getOrg() {
     return resp
   }
 
+  function getworkplaceid(args) {
+	var email = args["user"]["email"]
+	var addr = "https://graph.facebook.com/" + email
+	var options = {
+		method:'GET',
+		url:addr,
+		headers:{
+			Authorization: bearer_token
+		}
+  }
+  request(options)
+  	.then((response) => {
+		var result = JSON.parse(response);
+		console.log("Gogul",result,result["id"]);
+        
+	})
+	.catch(err => {
+		console.log(err);
+	});
+  }
+  
+
 function requester(options){
 
   requestNPM(options, function(error, response, body){
@@ -84,7 +106,6 @@ function requester(options){
 // 			  "auth_method"  : "password"
 // 			}
 // }
-
 exports = {
 
   events: [
@@ -140,17 +161,9 @@ exports = {
   },
 
   onEmployeeUpdateHandler: function(args) {
-  	var email = args["user"]["email"]
-  	var addr = "https://graph.facebook.com/" + email
-  	var options = {
-  		method:'GET',
-  		url:addr,
-  		headers:{
-  			Authorization: bearer_token
-  		}
-    }
-    var id = resp["id"]
-    resp = requester(options)
+  	var id = getworkplaceid(args)
+	console.log("hithere");
+	console.log(id);
     if(args["user"]["terminated"] == true || args["user"]["deleted"] == true){
       var options = {
         method:'DELETE',
@@ -159,7 +172,8 @@ exports = {
           Authorization: bearer_token
         }
       }
-      request(options);
+		request(options);
+
     }
     else{
     	var options = {
@@ -185,5 +199,4 @@ exports = {
       }
     request(options);}
   }
-
 };
