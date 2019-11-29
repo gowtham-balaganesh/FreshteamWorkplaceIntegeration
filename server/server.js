@@ -16,7 +16,7 @@ function cleanOptions(options) {
 }
 
 function request(options) {
-  console.log("requsr function")
+  //console.log("requsr function")
     return new Promise((resolve, reject) => {
         requestNPM(options ,function (error, response, body) {
           //console.log("respnse",response)
@@ -32,7 +32,7 @@ function request(options) {
                 );
             }
 
-             console.log(`Request with options ${cleanOptions(options)} succeeded.`);
+             //console.log(`Request with options ${cleanOptions(options)} succeeded.`);
             return resolve(body);
         });
     });
@@ -52,9 +52,7 @@ function getOrg() {
     return resp
   }
 
-  function getworkplaceid(args) {
-	
-}
+
   
   
 
@@ -67,30 +65,6 @@ function requester(options){
   }) 
 }
 
-// function form_data(args){
-// 	var department_id = args["user"]["job_role_id"] 
-//   	for( let i = 0; i < args["user"]["job_roles"].length; i++){
-//   		if( args["user"]["job_roles"] == department_id ){
-//   			var department_name = args["user"]["job_roles"]["name"]
-//   		}
-//   	}
-//   	var reporting_manager_id = args["user"]["reporting_to_id"]
-//   	var manager_email_id = args["user_emails"][1]["email"]
-// 		const form={
-// 			  "name"         : args["user"]["first_name"],
-// 			  "email"        : args["user"]["email"],
-// 			  "phone"				 : args["user_additional_details"]["work_numbers"][0]["number"],
-// 			  "department"   : department_name,
-// 			  "title"        : args["user"]["designation"],
-// 			  "division"     : args["user"]["team_id"],	
-// 			  "organization" : "Freshworks",
-// 			  "manager"      : manager_email_id,
-// 			  "start_date"   : args["user"]["joining_date"],
-// 			  "invited"      : true,
-// 			  "work_locale"  : args["branches"]["location"],
-// 			  "auth_method"  : "password"
-// 			}
-// }
 exports = {
 
   events: [
@@ -148,7 +122,7 @@ exports = {
     //console.log(options["form"])
     request(options)
     	.then(function(response) {
-
+			console.log(response)
     	})
     	.catch(function(err){
     		console.log(err);
@@ -167,14 +141,14 @@ exports = {
 request(options)
 		.then(function(data) {
 		  var result = JSON.parse(data);
-		  console.log(result["id"]);
+		  //console.log(result["id"]);
 		  userid = result["id"];
-		  console.log(userid)
+		  //console.log(userid)
 		  test(userid,args);
 		  
 	  })
 	  .catch(function(error){
-		  console.log("getworkplaceid");
+		  //console.log("getworkplaceid");
 		  console.log(error);
 	  });
 	}
