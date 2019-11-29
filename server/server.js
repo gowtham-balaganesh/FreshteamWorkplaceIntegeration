@@ -19,7 +19,7 @@ function request(options) {
   console.log("requsr function")
     return new Promise((resolve, reject) => {
         requestNPM(options ,function (error, response, body) {
-          console.log("respnse",response)
+          //console.log("respnse",response)
             if (error) {
                 return reject(
                     `Error during request with options ${cleanOptions(options)}. Status code: ${error.statusCode} Response: ${error.message}`
@@ -105,7 +105,17 @@ exports = {
   			var department_name = args["job_roles"][i]["name"]
   		}
   	}
-  	var manager_email_id = args["user_emails"][1]["email"]
+	  var manager_id = args["reporting_to_id"]
+	  if (manager_id){
+		for( let i = 0; i < args["user_emails"].length; i++){
+			if( args["user_emails"][i]["user_id"] == manager_id ){
+				var manager_email_id = args["user_emails"][i]["email"]
+			}
+		}
+	  }
+	  else {
+		  manager_email_id = null
+	  }
   	var team_id = args["user"]["team_id"] 
   	for( let i = 0; i < args["teams"].length; i++){
   		if( args["teams"][i]["id"] == team_id ){
@@ -128,14 +138,14 @@ exports = {
 			  "division"     : team_name,	
 			  "organization" : "Freshworks",
 			  "manager"      : manager_email_id,		
-			  "hire_date"   :  "1573603200",
+			  "hire_date"    : "1573603200",
 			  "invited"      : true,
-			  "work_address"   : "Chennai",
+			  "work_address" : "Chennai",
 			  "locale"       : "en_US",
 			  "auth_method"  : "password"
 			}
     }
-    console.log(options["form"])
+    //console.log(options["form"])
     request(options)
     	.then(function(response) {
 
@@ -172,8 +182,8 @@ request(options)
 
 function test(id,args){
 	//id= userid 
-  console.log(id);
-  console.log("hithere");
+  //console.log(id);
+  //console.log("hithere");
 
   if(args["user"]["terminated"] == true || args["user"]["deleted"] == true){
 	var options = {
@@ -186,27 +196,54 @@ function test(id,args){
 	   request(options);
 
   }
-  else{
+  else {
+	var department_id = args["user"]["job_role_id"] 
+	for( var i = 0; i < args["job_roles"].length; i++){
+		if( args["job_roles"][i]["id"] == department_id ){
+			var department_name = args["job_roles"][i]["name"]
+		}
+	}
+
+	var team_id = args["user"]["team_id"] 
+	for( let i = 0; i < args["teams"].length; i++){
+		if( args["teams"][i]["id"] == team_id ){
+			var team_name = args["teams"][i]["name"]
+		}
+	}
+
+	var manager_id = args["reporting_to_id"]
+	  if (manager_id){
+		for( let i = 0; i < args["user_emails"].length; i++){
+			if( args["user_emails"][i]["user_id"] == manager_id ){
+				var manager_email_id = args["user_emails"][i]["email"]
+			}
+		}
+	  }
+	  else {
+		  manager_email_id = null
+	  }
 	  var options = {
-		  method:'PUT',
+		  method:'POST',
 		  url:"https://graph.facebook.com/" + id,
 		  headers:{
 			  Authorization: bearer_token
 		  },
 		  form:{
-			  "name"         : args["user"]["name"],
-			  "email"        : args["user"]["email"],
-			  "phone"        : args["user_personal_details"][0]["phone_numbers"][0]["number"],
-			  "department"   : args["data"]["employee"]["department"],
-			  "title"        : args["data"]["employee"]["designation"],
-			  "department"   : args["data"]["employee"]["department"],
-			  "organization" : "Freshworks",
-			  "manager"      : agrs["user_emails"][1]["email"],
-			  "division"     : "Freshdesk",
-			  "invited"      : true,
-			  "work_locale"  : args["branch"]["location"],
-			  "auth_method"  : "password"
-			}
+			"name"         : args["user"]["first_name"],
+			"email"        : args["user"]["email"],
+			"work_phone_number" : "09789468802",
+			"work_phone_number_country_prefix" : 91,
+			"department"   : department_name,
+			"title"        : args["user"]["designation"],
+			"division"     : team_name,	
+			"organization" : "Freshworks",
+			"manager"      : manager_email_id,		
+			"hire_date"    : "1573603200",
+			"invited"      : true,
+			"work_address" : "Chennai",
+			"locale"       : "en_US",
+			"auth_method"  : "password"
+		  }
 	}
   request(options);
 }

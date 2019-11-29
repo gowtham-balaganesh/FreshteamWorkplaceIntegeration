@@ -33,7 +33,7 @@
     "date_format": "MonthFirst",
     "reportees_count": 0,
     "ancestry": null,
-    "terminated": true,
+    "terminated": false,
     "territorial_hr": false,
     "links": {
       "offboarding_form": null,
